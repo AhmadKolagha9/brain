@@ -1,13 +1,17 @@
 import os
+
+import flask_restful
 import numpy as np
 import cv2
 
 from PIL import Image
 from keras.models import load_model
 from flask import Flask, request, render_template
+from flask_restful import reqparse, Api, Resource
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
+api = Api(app)
 
 model = load_model('Brian_Tumor10Epochs.h5')
 print('Model loaded. Check http://127.0.0.1:5000/')
