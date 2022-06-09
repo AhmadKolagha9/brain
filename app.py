@@ -54,5 +54,20 @@ def upload():
     return None
 
 
+class Predict(Resource):
+    def post(self):
+        f = request.files['file']
+
+        basepath = os.path.dirname(__file__)
+        file_path = os.path.join(
+            basepath, 'uploads', secure_filename(f.filename))
+        f.save(file_path)
+        value = getResult(file_path)
+        result = get_className(value)
+        return result
+
+
+api.add_resource(Predict, '/predict')
+
 if __name__ == '__main__':
     app.run(debug=True)
