@@ -13,6 +13,7 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 api = Api(app)
 
+
 # model = load_model('Brian_Tumor10Epochs.h5')
 # print('Model loaded. Check http://127.0.0.1:5000/')
 
@@ -66,6 +67,13 @@ class Predict(Resource):
         result = get_className(value)
         return result
 
+
+class HelloWorld(Resource):
+    def get(self):
+        return {'hello': 'world'}
+
+
+api.add_resource(HelloWorld, '/')
 
 api.add_resource(Predict, '/predict')
 
