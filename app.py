@@ -13,8 +13,8 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 api = Api(app)
 
-model = load_model('Brian_Tumor10Epochs.h5')
-print('Model loaded. Check http://127.0.0.1:5000/')
+# model = load_model('Brian_Tumor10Epochs.h5')
+# print('Model loaded. Check http://127.0.0.1:5000/')
 
 
 def get_className(classNo):
