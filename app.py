@@ -30,8 +30,8 @@ def getResult(img):
     image = image.resize((64, 64))
     image = np.array(image)
     input_img = np.expand_dims(image, axis=0)
-    predictions = (model.predict(input_img) > 0.5).astype("int32")
-    return predictions
+    # predictions = (model.predict(input_img) > 0.5).astype("int32")
+    # return predictions
 
 
 # @app.route('/', methods=['GET'])
