@@ -7,7 +7,7 @@ from keras.models import load_model
 from flask import Flask, request, render_template
 from werkzeug.utils import secure_filename
 
-app = Flask(__name__, 'https://brain-ka.herokuapp.com/')
+app = Flask(__name__)
 
 model = load_model('Brian_Tumor10Epochs.h5')
 print('Model loaded. Check http://127.0.0.1:5000/')
